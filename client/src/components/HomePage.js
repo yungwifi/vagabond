@@ -5,7 +5,7 @@ class HomePage extends Component {
     render() {
         return (
             <div>
-                This is the home page.
+                Vagabond home page.
             </div>
         )
     }
