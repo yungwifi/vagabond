@@ -29,7 +29,7 @@ class HomePage extends Component {
       </ul>
     </div>
   </nav>
-  <img src='atlanta.jpg' alt="atlanta" />  
+  <img src='photo2.jpg' alt="atlanta" />  
             </div>
          </Splash>
          
