@@ -24,8 +24,8 @@ class HomePage extends Component {
     <div class="nav-wrapper z-depth-4">
       <a href="#" class="brand-logo">Vagabond</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sign Up</a></li>
-        <li><a href="badges.html">Log In</a></li>
+        <li><a href="#">Atlanta</a></li>
+        <li><a href="#">Log In</a></li>
       </ul>
     </div>
   </nav>
