@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
+const nav = {
+    backgroundColor: '#2E4A62'
+};
+
 class FooterBar extends Component {
     render() {
         return (
             <div>
-                        <footer class="page-footer">
+                        <footer style="nav" class="page-footer">
           <div class="container">
             <div class="row">
            
