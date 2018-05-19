@@ -15,7 +15,7 @@ class NavBar extends Component{
   <a href="/" className="brand-logo">Vagabond</a>
   <ul id="nav-mobile" className="right hide-on-med-and-down">
     <li><a href="/cities">Atlanta</a></li>
-    <li><a href="/profile">Log In</a></li>
+    <li><a href="/profile">Profile</a></li>
   </ul>
   
 </div>
