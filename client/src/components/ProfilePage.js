@@ -47,7 +47,7 @@ class ProfilePage extends Component {
     <h2 class="header">Posts</h2>
     <div class="card horizontal">
       <div class="card-image">
-        <img src="https://lorempixel.com/100/190/nature/6" />
+        
       </div>
       <div class="card-stacked">
         <div class="card-content">
