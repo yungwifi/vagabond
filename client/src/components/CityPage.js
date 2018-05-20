@@ -3,12 +3,67 @@ import Photo1 from './images/london.jpg'
 import Photo2 from './images/san_francisco.jpg'
 import Photo3 from './images/photo2.jpg'
 import { Parallax } from 'react-parallax'
+import {Link} from 'react-router-dom'
 
 
 const Styles = {background: 'white', padding: 20, position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%,-50%)'};
 
 class CityPage extends Component {
-    render() {
+  state = {
+    cities: [],
+    city: {
+      cityName: '',
+      posts: []
+    }
+  }
+
+  componentDidMount() {
+    this.getAllCities()
+  }
+
+  getAllCities = () => {
+    axios.get('/api/cities')
+      .then(res => {
+        console.log("Saving cities to state", res.data)
+        this.setState({ cities: res.data })
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+
+  createCity = () => {
+    axios.post('/api/cities', { city: this.state.city })
+    .then((res) => {
+      const cities = [...this.state.cities]
+      city.push(res.data)
+      this.setState({cities})
+    })
+  }
+
+  handleSignUp = (e) => {
+    e.preventDefault()
+    axios.post('/api/cities', { city: this.state.city })
+    .then((res) => {
+      const city = [...this.state.cities]
+      cities.push(res.data)
+      this.setState({cities})
+    })
+  }
+
+  handleChange = (event) => {
+    const city = { ...this.state.city }
+    city[event.target.name] = event.target.value
+    this.setState({ city })
+  }
+
+  render() {
+    const cityLinks = this.state.cities.map((city, i) => {
+      return (
+        <div key={i}>
+          <Link to={`/city/${city._id}`}>{city.cityName}</Link>
+        </div>)
+    })
         return (
           <div>
           

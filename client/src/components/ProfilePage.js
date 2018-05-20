@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Photo from "./images/photo.jpg";
+import axios from 'axios'
 
 const Image = {
     width: "200px"
@@ -21,6 +22,7 @@ const Float = {
 }
 
 class ProfilePage extends Component {
+    
     render() {
         return (
             <div>
