@@ -1,16 +1,20 @@
 import React, { Component } from 'react'
-// import { Link } from 'react-router-dom'
-// import styled from 'styled-components'
-// import photos from '../photos/Atlanta.jpg'
+import { Link } from 'react-router-dom'
+import Photos from '../photos/Atlanta.jpg'
 
+let sectionStyle = {
+    width: "100%",
+    height: "100vh",
+    backgroundImage: `url(${Photos})`
+  };
 
 class HomePage extends Component {
 
     render() {
         return (
-            <div>
+            <div style={sectionStyle}>
        
-<p>This is the HomePage</p>
+<h1 >Project Vagabond </h1>
         
        
          </div>
@@ -19,4 +23,4 @@ class HomePage extends Component {
     }
 }
 
-export default HomePage
+export default HomePage;

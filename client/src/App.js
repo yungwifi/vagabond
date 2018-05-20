@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import CityPage from './components/CityPage'
+import ProfilePage from './components/ProfilePage'
+import PostsPage from './components/PostsPage'
 
 
 
@@ -11,14 +13,17 @@ class App extends Component {
   render() {
     return (
       <div>
+      <NavBar />
       <Router>
           <Switch>
-          <NavBar />
-          <Route exact path="/cities" component={CityPage} />
           <Route exact path="/" component={HomePage} />
+          <Route exact path="/cities" component={CityPage} />
+          <Route exact path="/profile" component={ProfilePage} />
+          <Route exact path="/cities/:cityId/posts" component={PostsPage}/>
+          <Route exact path="/profile/posts" component={PostsPage}/>
           </Switch>
       </Router>
-      </div>
+</div>
     )
   }
 }
