@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import HomePage from './components/HomePage'
 import CityPage from './components/CityPage'
-import FooterBar from './components/FooterBar';
+
 
 
 
@@ -12,14 +12,11 @@ class App extends Component {
     return (
       <div>
       <Router>
-        
           <Switch>
           <NavBar />
           <Route exact path="/cities" component={CityPage} />
-            <Route exact path="/" component={HomePage} />
-            <FooterBar />
+          <Route exact path="/" component={HomePage} />
           </Switch>
-    
       </Router>
       </div>
     )

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import photo1 from './images/london.jpg'
+import photo2 from './images/san_francisco.jpg'
 
 class CityPage extends Component {
     render() {
@@ -6,7 +8,7 @@ class CityPage extends Component {
             <div>
                  <div class="parallax-container">
       <div class="parallax">
-      <img src="images/parallax1.jpg" alt='parallax_yo'/>
+      <img src={photo1} alt='parallax_yo'/>
       </div>
     </div>
     <div class="section white">
@@ -17,7 +19,7 @@ class CityPage extends Component {
     </div>
     <div class="parallax-container">
       <div class="parallax">
-      <img src="images/parallax2.jpg" alt='parallax_yo' />
+      <img src={photo2} alt='parallax_yo' />
       
 
          
