@@ -4,7 +4,7 @@ class PostsPage extends Component {
     render() {
         return (
             <div>
-                <p>You hit the posts page</p>
+    
             </div>
         );
     }
