@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 
-const Cityimg = styled.div`
+const CityImg = styled.div`
     width: 200px;
-    height: 200px;`
+    height: 200px;
+    `;
 
 class PostsPage extends Component {
     state = {
