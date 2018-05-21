@@ -22,7 +22,7 @@ class PostForm extends Component {
         console.log(post)
     }
     createPost = () => {
-        axios.post('/api/cities/${city_id}/posts', { post: (this.state.Post) })
+        axios.post(`/api/cities/${city_id}/posts`, { post: (this.state.Post) })
         console.log(this.state.Post)
             .then((res) => {
                 const posts = [...this.state.Post]
