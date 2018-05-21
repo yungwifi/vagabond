@@ -4,7 +4,8 @@ import axios from 'axios';
 
 const Cityimg = styled.div`
     width: 200px;
-    height: 200px;`
+    height: 200px;
+    `
 
 class PostsPage extends Component {
     state = {

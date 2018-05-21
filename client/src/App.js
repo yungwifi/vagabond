@@ -5,6 +5,7 @@ import HomePage from './components/HomePage'
 import CityPage from './components/CityPage'
 import ProfilePage from './components/ProfilePage'
 import PostsPage from './components/PostsPage'
+import ShowPostPage from './components/ShowPostPage';
 
 
 
