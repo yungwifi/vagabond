@@ -38,24 +38,24 @@ class PostForm extends Component {
             <div>
                 <Header><h2>New Form</h2></Header>
                 <Formbody>
-                    <div class="row">
-                        <form class="col s12" onSubmit={this.createPost}>
-                            <div class="row">
-                                <div class="input-field col s8">
+                    <div className="row">
+                        <form className="col s12" onSubmit={this.createPost}>
+                            <div className="row">
+                                <div className="input-field col s8">
                                     <input onChange={this.handleChange} name="title" type="text" class="validate" >
                                     </input>
                                     <label for="title">title</label>
                                 </div>
                             </div>
 
-                            <div class="row">
-                                <div class="input-field col s8">
+                            <div className="row">
+                                <div className="input-field col s8">
                                     <input onChange={this.handleChange} name="content" type="text" class="validate" >
                                     </input>
                                     <label for="content">content</label>
                                 </div>
                                 <br />
-                                <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                                <button className="btn waves-effect waves-light" type="submit" name="action">Submit
                                 </button>
                             </div>
                         </form>
