@@ -20,10 +20,13 @@ class App extends Component {
             <Route exact path="/profile" component={ProfilePage} />
             <Route exact path="/cities/:city_id/posts" component={PostsPage} />
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Route exact path="/cities/:city_id/posts/new" component={PostForm} />
 =======
          
 >>>>>>> e5d39536f9d13d28c06a27e601bfdcd803831f0b
+=======
+>>>>>>> 3e4222e2fd732e760e0ec269fc78d386558e7b2b
             <Route exact path="/cities/:city_id/posts/:id" component={ShowPostPage} />
           </Switch>
         </Router>
