@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Button } from 'react-materialize'
 import { Link } from 'react-router-dom'
 
-const Cityimg = styled.div`
+const CityImg = styled.div`
     width: 200px;
     height: 200px;
     `
@@ -51,9 +51,9 @@ class PostsPage extends Component {
                         <h2 className="header">{post.title}</h2>
                         <div className="card horizontal">
                             <div className="card-image">
-                                <Cityimg >
+                                <CityImg >
                                     <img src="https://lorempixel.com/100/190/nature/6" />
-                                </Cityimg>
+                                </CityImg>
                             </div>
                             <div className="card-stacked">
                                 <div className="card-content">
