@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 
 const CityImg = styled.div`
     width: 200px;
     height: 200px;
     `;
-
 class PostsPage extends Component {
     state = {
         posts: []

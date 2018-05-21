@@ -6,6 +6,7 @@ import CityPage from './components/CityPage'
 import ProfilePage from './components/ProfilePage'
 import PostsPage from './components/PostsPage'
 import ShowPostPage from './components/ShowPostPage';
+import PostForm from './components/PostForm';
 
 class App extends Component {
   render() {
@@ -18,7 +19,7 @@ class App extends Component {
             <Route exact path="/cities" component={CityPage} />
             <Route exact path="/profile" component={ProfilePage} />
             <Route exact path="/cities/:city_id/posts" component={PostsPage} />
-            <Route exact path="/profile/posts" component={PostsPage} />
+            <Route exact path="/cities/:city_id/posts/new" component={PostForm} />
             <Route exact path="/cities/:city_id/posts/:id" component={ShowPostPage} />
           </Switch>
         </Router>

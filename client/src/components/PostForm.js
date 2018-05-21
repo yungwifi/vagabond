@@ -11,40 +11,55 @@ padding: 40px;
 margin: auto;
 text-align: center;
 `
-const createPost = () => {
-    axios.post()
-}
-
 class PostForm extends Component {
-    state = {  posts: []
+    state = {
+        Post: []
+    }
+    handleChange = (event) => {
+        const post = { ...this.state.Post }
+        post[event.target.name] = event.target.value
+        this.setState({ post })
+        console.log(post)
+    }
+    createPost = () => {
+        axios.post('/api/cities/:city_id/posts', { post: (this.state.Post) })
+        console.log(this.state.Post)
+            .then((res) => {
+                const posts = [...this.state.Post]
+                posts.push(res.data)
+                console.log(posts)
+            })
+            .catch(err => {
+                console.error(err)
+            })
     }
     render() {
         return (
             <div>
                 <Header><h2>New Form</h2></Header>
                 <Formbody>
-                <div class="row">
-                    <form class="col s12">
-                        <div class="row">
-                            <div class="input-field col s8">
-                                <input id="title" type="text" class="validate" >
-                                </input>
-                                <label for="title">title</label>
+                    <div class="row">
+                        <form class="col s12" onSubmit={this.createPost}>
+                            <div class="row">
+                                <div class="input-field col s8">
+                                    <input onChange={this.handleChange} name="title" type="text" class="validate" >
+                                    </input>
+                                    <label for="title">title</label>
+                                </div>
                             </div>
-                        </div>
 
-                        <div class="row">
-                            <div class="input-field col s8">
-                                <input id="content" type="text" class="validate" >
-                                </input>
-                                <label for="content">content</label>
-                            </div>
-                            <br/>
+                            <div class="row">
+                                <div class="input-field col s8">
+                                    <input onChange={this.handleChange} name="content" type="text" class="validate" >
+                                    </input>
+                                    <label for="content">content</label>
+                                </div>
+                                <br />
                                 <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-                                </button>  
-                        </div>
-                    </form>
-                </div>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </Formbody>
             </div>
         )
