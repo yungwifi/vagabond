@@ -8,13 +8,19 @@ let sectionStyle = {
     backgroundImage: `url(${Photos})`
   };
 
+  let Header = {
+      color: "#880000",
+      textShadow: "1px 1px 2px red, 0 0 1em blue, 0 0 0.2em blue"
+}
+  
+
 class HomePage extends Component {
 
     render() {
         return (
             <div style={sectionStyle}>
        
-<h1 >Project Vagabond </h1>
+<h1 style={Header}>Project Vagabond </h1>
         
        
          </div>
