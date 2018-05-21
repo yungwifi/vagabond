@@ -16,6 +16,7 @@ class NavBar extends Component{
   <ul id="nav-mobile" className="right hide-on-med-and-down">
     <li><a href="/cities">Cities</a></li>
     <li><a href="/profile">Profile</a></li>
+    <li><a href="/cities/:cityId">Atlanta</a></li>
   </ul>
   
 </div>
