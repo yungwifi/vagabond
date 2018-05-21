@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Button } from 'react-materialize'
-import { Link } from 'react-router-dom'
+import { Button, Modal } from 'react-materialize'
 
 class ShowPostPage extends Component {
   state = {
@@ -50,7 +49,12 @@ class ShowPostPage extends Component {
               <div className="card-content">
                 <span className="card-title">{this.state.post.title}</span>
                 <p>{this.state.post.content}</p>
-                <Button onClick={this.deletePost}> Delete Post </Button>
+                <Modal
+                  header="Delete Post"
+                  trigger={<Button>Delete Post</Button>}>
+                  <p> Are you sure you want to delete this post? </p>
+                  <Button className="danger" onClick={this.deletePost}> Delete Post </Button>
+                </Modal>
               </div>
             </div>
           </div>
