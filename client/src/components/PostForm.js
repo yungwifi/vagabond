@@ -10,7 +10,7 @@ class PostForm extends Component{
   <div class="row">
     <form class="col s12">
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s8">
           <input placeholder="Placeholder" id="first_name" type="text" class="validate" >
           </input>
           <label for="title">title</label>
