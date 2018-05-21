@@ -11,6 +11,22 @@ class PostsPage extends Component {
         posts: []
     }
 
+    componentDidMount() {
+        this.getAllPosts()
+    }
+
+    getAllPosts = () => {
+        const cityId = this.props.match.params.city_id
+        axios.get(`/api/cities/${cityId}/posts`)
+            .then(res => {
+                console.log("Getting Posts", res.data)
+                this.setState({ posts: res.data })
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
+
     render() {
         const cardLoop = this.state.posts.map((post, i) => {
             return (
@@ -19,9 +35,9 @@ class PostsPage extends Component {
                         <h2 className="header">{post.title}</h2>
                         <div className="card horizontal">
                             <div className="card-image">
-                                <CityImg >
+                                <Cityimg >
                                     <img src="https://lorempixel.com/100/190/nature/6" />
-                                </CityImg>
+                                </Cityimg>
                             </div>
                             <div className="card-stacked">
                                 <div className="card-content">
