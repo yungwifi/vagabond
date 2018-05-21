@@ -42,7 +42,7 @@ class PostForm extends Component {
                         <form className="col s12" onSubmit={this.createPost}>
                             <div className="row">
                                 <div className="input-field col s8">
-                                    <input onChange={this.handleChange} name="title" type="text" class="validate" >
+                                    <input onChange={this.handleChange} name="title" type="text" >
                                     </input>
                                     <label for="title">title</label>
                                 </div>
@@ -50,7 +50,7 @@ class PostForm extends Component {
 
                             <div className="row">
                                 <div className="input-field col s8">
-                                    <input onChange={this.handleChange} name="content" type="text" class="validate" >
+                                    <input onChange={this.handleChange} name="content" type="text" >
                                     </input>
                                     <label for="content">content</label>
                                 </div>

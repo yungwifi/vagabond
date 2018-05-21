@@ -19,7 +19,11 @@ class App extends Component {
             <Route exact path="/cities" component={CityPage} />
             <Route exact path="/profile" component={ProfilePage} />
             <Route exact path="/cities/:city_id/posts" component={PostsPage} />
+<<<<<<< HEAD
             <Route exact path="/cities/:city_id/posts/new" component={PostForm} />
+=======
+         
+>>>>>>> e5d39536f9d13d28c06a27e601bfdcd803831f0b
             <Route exact path="/cities/:city_id/posts/:id" component={ShowPostPage} />
           </Switch>
         </Router>
