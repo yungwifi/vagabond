@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { Button } from 'react-materialize'
+import { Link } from 'react-router-dom'
 
 const Cityimg = styled.div`
     width: 200px;
@@ -21,11 +23,24 @@ class PostsPage extends Component {
         axios.get(`/api/cities/${cityId}/posts`)
             .then(res => {
                 console.log("Getting Posts", res.data)
-                this.setState({ posts: res.data })
+                this.setState({
+                    posts: res.data
+                })
             })
             .catch(err => {
                 console.error(err)
             })
+    }
+
+    deletePost = () => {
+        const cityId = this.props.match.params.city_id
+        const url = `/api/cities/${cityId}/posts/:id`
+        console.log("DELETE POST ROUTE BEING CALLED", url)
+        axios.delete(url)
+            .then((res) => {
+                console.log("RESPONSE FROM SPOT DELETING", res.data)
+                this.componentDidMount()
+            }).catch(console.error)
     }
 
     render() {
@@ -43,6 +58,8 @@ class PostsPage extends Component {
                             <div className="card-stacked">
                                 <div className="card-content">
                                     <p>{post.content}</p>
+                                    <br />
+                                    <Link to={`/cities/${post.city_id}/posts/${post.id}`}><Button> Show Post </Button></Link>
                                 </div>
                             </div>
                         </div>
