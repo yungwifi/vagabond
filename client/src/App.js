@@ -24,6 +24,7 @@ class App extends Component {
             <Route exact path="/profile" component={ProfilePage} />
             <Route exact path="/cities/:city_id/posts/new" component={PostForm} />
             <Route exact path="/cities/:city_id/posts/:id" component={ShowPostPage} />
+            <Route exact path="/PostsPage" component={PostsPage} />
             <Route exact path="/cities/:city_id" component={CityShowPage} />
           </Switch>
         </Router>
