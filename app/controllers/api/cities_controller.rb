@@ -3,10 +3,11 @@ class Api::CitiesController < ApplicationController
         @cities = City.all
         render json: @cities
     end
-
     def show
         @city = City.find(params[:id])
-        render json: @city
+        @posts = City.find(params[:id]).posts
+        @response = {city: @city, posts: @posts}
+        render json: @response
     end
 
     def update 

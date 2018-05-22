@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import { Button } from 'react-materialize'
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 
 const CityImg = styled.div`
     width: 200px;
@@ -11,26 +11,10 @@ const CityImg = styled.div`
 
 class PostsPage extends Component {
     state = {
-        posts: []
+        posts: [],
+        redirect: false
     }
 
-    componentDidMount() {
-        this.getAllPosts()
-    }
-
-    getAllPosts = () => {
-        const cityId = this.props.match.params.city_id
-        axios.get(`/api/cities/${cityId}/posts`)
-            .then(res => {
-                console.log("Getting Posts", res.data)
-                this.setState({
-                    posts: res.data
-                })
-            })
-            .catch(err => {
-                console.error(err)
-            })
-    }
 
     deletePost = () => {
         const cityId = this.props.match.params.city_id
@@ -44,7 +28,10 @@ class PostsPage extends Component {
     }
 
     render() {
-        const cardLoop = this.state.posts.map((post, i) => {
+        if (this.state.redirect) {
+            return (<Redirect to={`/cities/${this.props.match.params.city_id}`} />)
+          }
+        const cardLoop = this.props.posts.map((post, i) => {
             return (
                 <div key={i}>
                     <div className="col s12 m7">
