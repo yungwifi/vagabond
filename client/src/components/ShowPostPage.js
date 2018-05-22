@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Button } from 'react-materialize'
-import { Link } from 'react-router-dom'
+import { Button, Modal  } from 'react-materialize'
+import { Link, Redirect } from 'react-router-dom'
 
 class ShowPostPage extends Component {
   state = {
-    post: {}
+    post: {},
+    redirect: false
   }
 
   componentDidMount() {
@@ -33,12 +34,15 @@ class ShowPostPage extends Component {
     console.log("DELETE POST ROUTE BEING CALLED", url)
     axios.delete(url)
       .then((res) => {
-        console.log("RESPONSE FROM SPOT DELETING", res.data)
-        this.componentDidMount()
+        console.log("RESPONSE FROM POST DELETING", res.data)
+        this.setState({redirect: true})
       }).catch(console.error)
   }
 
   render() {
+    if(this.state.redirect){
+      return(<Redirect to={`/cities/${this.state.post.city_id}`}/>)
+    }
     return (
       <div>
 
@@ -50,7 +54,12 @@ class ShowPostPage extends Component {
               <div className="card-content">
                 <span className="card-title">{this.state.post.title}</span>
                 <p>{this.state.post.content}</p>
+                <Modal 
+                header='Delete Post'
+                trigger={<Button> Delete Post</Button>}>
+                <p> Are you sure you want to delete this post? </p>
                 <Button onClick={this.deletePost}> Delete Post </Button>
+                </Modal>
               </div>
             </div>
           </div>

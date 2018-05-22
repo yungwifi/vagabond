@@ -33,7 +33,10 @@ class PostForm extends Component {
     axios.post(`/api/cities/${cityId}/posts`, {post: this.state.post})
       .then((res) => {
         console.log("RESPONSE FROM NEW POST", res.data)
-        this.setState ({ post: res.data.posts })
+        this.setState ({ 
+          post: res.data.posts,
+          redirect: true
+         })
       })
       .catch((error) => {
         console.log(error)
@@ -42,7 +45,7 @@ class PostForm extends Component {
 
   render() {
     if (this.state.redirect) {
-      return (<Redirect to={`/cities/${this.state.post.city_id}`} />)
+      return (<Redirect to={`/cities/${this.props.match.params.city_id}`} />)
     }
     return (
       <div>
